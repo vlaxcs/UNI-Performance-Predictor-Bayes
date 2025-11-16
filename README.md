@@ -76,9 +76,8 @@ What could be harder to guess than your final grade after you've struggled all s
             - Each **Todo** task provides a percentage of learning-needs satisfaction, calculated as the *ratio between **points / max_points*** (hasDone and hasTodo(hasDone.task_id).max_points).
             - For each ratio, the task’s weight and the weight associated with the exam type for the corresponding course are taken into account.
 
-        $$\text{ScorTotalTodo}_E = \sum_{t \in \text{Todo}_E} \left( \frac{\text{hasDone.points}}{\text{hasTodo.max\_points}} \times \text{hasTodo.weight} \right)$$
+            - <img width="562" height="116" alt="image" src="https://github.com/user-attachments/assets/8f843eb4-f582-4455-824f-af6bb9178251" />
 
-        $$\text{PunctajNormalizatTodo}_E = \frac{\text{ScorTotalTodo}_E}{\sum_{t \in \text{Todo}_E} \text{hasTodo.weight}} \times 100$$
 
 
         - Using **hasDone**:  \
@@ -93,10 +92,8 @@ What could be harder to guess than your final grade after you've struggled all s
                 - **submitted late (after the deadline)** decreases the total success value using a geometric gradual reduction, starting from **-0.05%, then decreasing toward -0.1%, -0.2%, -0.4%**. This value is then multiplied by the number of delayed days (up to a maximum of 30 days) and applies to a maximum of 5 tasks;
                 - **submitted before the deadline** adds to the total success value using the same values mentioned above, for all tasks;
                 - A generator function `classification.py/adjust_generator()` is used to apply the geometric adjustment.
-
-            $$\text{PunctajAjustatTodo}_E = \text{PunctajNormalizatTodo}_E \times (1 + \text{Ajustare}_{\text{Delay/Bonus}})$$
-
-            $$\text{PunctajComponentaExamene} = \sum_{E} \left( \text{PunctajAjustatTodo}_E \times \frac{\text{hasWeights.weight}_E}{100} \right)$$
+            
+            - <img width="671" height="95" alt="image" src="https://github.com/user-attachments/assets/b3dc8cd5-923c-4291-a786-0b384a74c78c" />
 
         - Using **hasPresences, hasDone**:
             [RO]
@@ -117,9 +114,8 @@ What could be harder to guess than your final grade after you've struggled all s
                     - **$W_P$ (Attendances) = 60%**
                     - **$W_T$ (Todo) = 40%**
 
-                $$\text{IndeplinitPrezente}_E = \begin{cases} 1 & \text{dacă } \text{hasPresences.presences} \ge \text{hasWeights.RequiredPresences} \\ 0 & \text{altfel} \end{cases}$$
-
-                $$\text{NotaAproximativa} = (\text{PunctajComponentaExamene} \times W_T) + (\text{ScorPrezențe} \times W_P)$$
+                - **IndeplinitPrezente_E = 1 if presences ≥ required_presences, otherwise 0**
+                - $$\text{NotaAproximativa} = (\text{PunctajComponentaExamene} \times W_T) + (\text{ScorPrezențe} \times W_P)$$
 
             | student_id | course_id | PunctajComponentaExamene  | ScorPrezenteExam | Ajustare_Delay/Bonus  | NotaAproximativa | Class       |
             |------------|-----------|---------------------------|------------------|-----------------------|------------------|-------------|
