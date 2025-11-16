@@ -95,7 +95,7 @@ What could be harder to guess than your final grade after you've struggled all s
             
             - <img width="671" height="95" alt="image" src="https://github.com/user-attachments/assets/b3dc8cd5-923c-4291-a786-0b384a74c78c" />
 
-        - Using **hasPresences, hasDone**:
+        - Using **hasPresences, hasDone**: \
             [RO]
             - Dacă data aleasă pentru calcul (default e random, din intervalul descris în [Data Generation - Tables and rules/hasTodo/deadline](#hastodo)):
                 - este înainte de **01.12.2025**, prezențele contează **80%**, iar task-urile din **hasDone** contează **20%**:
