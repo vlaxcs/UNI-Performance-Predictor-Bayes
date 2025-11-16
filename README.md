@@ -262,3 +262,9 @@ What could be harder to guess than your final grade after you've struggled all s
         FOREIGN KEY (exam_type_id)  REFERENCES ExamType(id)
     );
     ```
+
+## Bibliography
+
+- [via NitroNLP](https://gitlab.com/nitronlp/Workshops) - Slides - [Slides - Stanford - Naive Bayes, Text Classification, and Sentiment](https://web.stanford.edu/~jurafsky/slp3/4.pdf)
+- [via NitroNLP](https://gitlab.com/nitronlp/Workshops) - Slides - [Stanford - Text Classification and Naive Bayes](https://web.stanford.edu/~jurafsky/slp3/slides/7_NB.pdf)
+- [via NitroNLP](https://gitlab.com/nitronlp/Workshops) - Practice - [IITKGP - Bayes Classifier](https://cse.iitkgp.ac.in/~pabitra/course/ml/bayesclassifier_pp.pdf)
